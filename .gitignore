@@ -1,0 +1,13 @@
+# dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# config !!This should be NEVER pushed this is only for demonstrational purposes!!
+# config/config.env
+
+# production
+/build
+
+# misc
+.DS_Store

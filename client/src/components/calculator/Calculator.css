@@ -1,0 +1,24 @@
+.calculator {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(4, 80px);
+  grid-template-rows: minmax(80px, auto) repeat(5, 80px);
+  box-shadow: 0px 0px 40px #333333;
+}
+
+.calculator .bbleft-radius {
+  border-bottom-left-radius: 10px;
+}
+
+.calculator .bbright-radius {
+  border-bottom-right-radius: 10px;
+}
+
+.calculator .btleft-radius {
+  border-top-left-radius: 10px;
+}
+
+.calculator .btright-radius {
+  border-top-right-radius: 10px;
+}

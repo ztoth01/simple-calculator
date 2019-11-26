@@ -1,0 +1,31 @@
+{
+  "name": "simple-calculator",
+  "version": "1.0.0",
+  "description": "This is a simple full stack online calulator",
+  "main": "server.js",
+  "scripts": {
+    "start": "NODE_ENV=production node server",
+    "server": "nodemon server",
+    "client": "npm start --prefix client",
+    "clientinstall": "npm install --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "Zoltan Toth",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "colors": "^1.4.0",
+    "concurrently": "^5.0.0",
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.1"
+  },
+  "prettier": {
+    "trailingComma": "none",
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": true
+  }
+}
