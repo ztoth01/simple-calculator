@@ -20,7 +20,7 @@ if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 
-// Mount routers
+// Add routers
 app.use("/api/v1/result", result);
 
 // Error middleware
