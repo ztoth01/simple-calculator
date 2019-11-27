@@ -2,6 +2,7 @@ import React, { useReducer } from "react";
 import CalculatorContext from "./calculatorContext";
 import calculatorReducer from "./calculatorReducer";
 import axios from "axios";
+import { create, all } from "mathjs";
 
 import {
   SET_CURRENT_VALUE,
@@ -18,6 +19,8 @@ const CalculatorState = props => {
     isPrevResult: false
   };
   const [state, dispatch] = useReducer(calculatorReducer, initialState);
+
+  const math = create(all, {});
 
   // Save current result to the result.txt
   const saveResult = async () => {
@@ -108,21 +111,22 @@ const CalculatorState = props => {
   // Calculate
   const calculate = (a, b) => {
     let result;
+    const precision = 14;
     a = parseFloat(a);
     b = parseFloat(b);
     if (isNaN(a) || isNaN(b)) return;
     switch (state.operation) {
       case "+":
-        result = a + b;
+        result = math.format(math.eval(a + b), precision);
         break;
       case "-":
-        result = a - b;
+        result = math.format(math.eval(a - b), precision);
         break;
       case "x":
-        result = a * b;
+        result = math.format(math.eval(a * b), precision);
         break;
       case "÷":
-        result = a / b;
+        result = math.format(math.eval(a / b), precision);
         break;
       default:
         return;
