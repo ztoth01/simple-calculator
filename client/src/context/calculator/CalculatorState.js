@@ -54,7 +54,6 @@ const CalculatorState = props => {
   const equalHandler = () => {
     // Check there are two numbers so calculate is possible
     if (state.prevValue === "") return;
-    //setCurrentValue(calculate(prevValue, currentValue));
     dispatch({
       type: SET_CURRENT_VALUE,
       payload: calculate(state.prevValue, state.currentValue)
